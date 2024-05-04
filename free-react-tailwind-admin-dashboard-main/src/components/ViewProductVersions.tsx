@@ -101,7 +101,6 @@ const ViewProductVersion: React.FC<ViewProductVersionProps> = ({ productId }) =>
 
     return (
         <>
-
             {showDangerDialogDeleted && (
                 <DangerDialog
                     nameComponent={selectedDeleteVerisonStyle}

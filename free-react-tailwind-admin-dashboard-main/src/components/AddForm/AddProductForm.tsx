@@ -166,21 +166,10 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onAdd, onClose }) => {
                                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                             ></textarea>
                         </div>
-                        <div>
-                            <label className="mb-3 block text-black dark:text-white">Quantity:</label>
-                            <input
-                                type="number"
-                                name="stock"
-                                value={newProduct.stock}
-                                min={0}
-                                onChange={handleChange}
-                                className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-2 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                            />
-                        </div>
                     </div>
 
                     <div className="flex justify-end mx-4 my-2">
-                        <button type="submit" className="bg-blue-500 text-white p-2 rounded">Accept</button>
+                        <button type="submit" className="bg-blue-500 text-white p-2 rounded">Create</button>
                         <button type="button" onClick={onClose} className="bg-slate-100 text-black px-3 ml-2 rounded border-[1.5px] border-stroke">Cancel</button>
                     </div>
                 </form>

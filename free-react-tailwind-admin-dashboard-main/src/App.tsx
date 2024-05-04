@@ -20,6 +20,8 @@ import Category from './pages/Catagory';
 import Version from './pages/Version';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import User from './pages/User';
+import Order from './pages/Order';
 
 
 function App() {
@@ -85,92 +87,31 @@ function App() {
           }
         />
         <Route
-          path="/profile"
+          path="/user"
           element={
             <>
-              <PageTitle title="Profile " />
-              <Profile />
+              <PageTitle title="Users " />
+              <User />
             </>
           }
         />
         <Route
-          path="/forms/form-elements"
+          path="/order"
           element={
             <>
-              <PageTitle title="Form Elements " />
-              <FormElements />
+              <PageTitle title="Orders " />
+              <Order />
             </>
           }
         />
-        <Route
-          path="/forms/form-layout"
-          element={
-            <>
-              <PageTitle title="Form Layout " />
-              <FormLayout />
-            </>
-          }
-        />
-        <Route
-          path="/tables"
-          element={
-            <>
-              <PageTitle title="Tables" />
-              <Tables />
-            </>
-          }
-        />
+
+
         <Route
           path="/settings"
           element={
             <>
               <PageTitle title="Settings" />
               <Settings />
-            </>
-          }
-        />
-        <Route
-          path="/chart"
-          element={
-            <>
-              <PageTitle title="Basic Chart" />
-              <Chart />
-            </>
-          }
-        />
-        <Route
-          path="/ui/alerts"
-          element={
-            <>
-              <PageTitle title="Alerts" />
-              <Alerts />
-            </>
-          }
-        />
-        <Route
-          path="/ui/buttons"
-          element={
-            <>
-              <PageTitle title="Buttons " />
-              <Buttons />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signin"
-          element={
-            <>
-              <PageTitle title="Signin" />
-              <SignIn />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signup"
-          element={
-            <>
-              <PageTitle title="Signup " />
-              <SignUp />
             </>
           }
         />

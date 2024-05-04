@@ -46,8 +46,8 @@ const DangerDialog: React.FC<DangerDialogProps> = ({ nameComponent, onConfirm, o
                                             <BiSolidError className="h-6 w-6 text-red-600" aria-hidden="true" />
                                         </div>
                                         <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                            <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                                                Delete {nameComponent}
+                                            <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-red-600">
+                                                Delete "{nameComponent}"
                                             </Dialog.Title>
                                             <div className="mt-2">
                                                 <p className="text-sm text-gray-500">

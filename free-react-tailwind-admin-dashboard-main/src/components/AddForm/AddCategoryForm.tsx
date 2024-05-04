@@ -60,12 +60,12 @@ const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ onAdd, onClose }) => 
             <div className=" mt-[5vh] min-w-100 sm:min-w-132.5 rounded-md border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                 <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
                     <h3 className="font-medium text-black dark:text-white">
-                        Create New Product
+                        Create New Category
                     </h3>
                 </div>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5.5 p-6.5 ">
                     <div>
-                        <label className="mb-3 block text-black dark:text-white">Tên sản phẩm:</label>
+                        <label className="mb-3 block text-black dark:text-white">Category Name:</label>
                         <input
                             type="text"
                             name="name"
@@ -75,7 +75,7 @@ const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ onAdd, onClose }) => 
                         />
                     </div>
                     <div>
-                        <label className="mb-3 block text-black dark:text-white">Hình ảnh:</label>
+                        <label className="mb-3 block text-black dark:text-white">Image:</label>
                         <input
                             type="file"
                             name="image"

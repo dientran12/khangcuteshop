@@ -57,7 +57,7 @@ const TableFour: React.FC<TableFourProps> = ({ productData, totalPages, currentP
         <div className="col-span-3 flex items-center">
           <p className="font-medium">Product Name</p>
         </div>
-        <div className="col-span-1 hidden items-center sm:flex">
+        <div className="col-span-1 hidden items-center md:flex">
           <p className="font-medium">Brand</p>
         </div>
         <div className="col-span-1 flex items-center">
@@ -76,7 +76,7 @@ const TableFour: React.FC<TableFourProps> = ({ productData, totalPages, currentP
 
       {productData.map((product, key) => (
         <div
-          className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5"
+          className={`grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5  ${key % 2 === 0 ? "bg-slate-200 dark:bg-slate-600" : "bg-white dark:bg-boxdark"}`}
           key={key}
         >
           <div className="col-span-3 flex items-center">
@@ -85,7 +85,7 @@ const TableFour: React.FC<TableFourProps> = ({ productData, totalPages, currentP
                 <img
                   src={product.images?.length ? `${import.meta.env.VITE_API_URL}${product.images[0]}` : imageEmpty}
                   alt="Product"
-                  className="h-30 w-30 object-cover rounded-md"
+                  className="h-15 w-15 md:h-30 md:w-30 object-cover rounded-md"
                   onError={handleImageOnError}
                   onLoad={handleImageOnLoad} // Thêm sự kiện onLoad nếu cần
                 />
@@ -95,7 +95,7 @@ const TableFour: React.FC<TableFourProps> = ({ productData, totalPages, currentP
               </p>
             </div>
           </div>
-          <div className="col-span-1 hidden items-center sm:flex">
+          <div className="col-span-1 hidden items-center md:flex">
             <p className="text-sm text-black dark:text-white">
               {product.brand}
             </p>

@@ -38,7 +38,7 @@ const Products: React.FC = () => {
 
   const fetchProducts = async () => {
     try {
-      const itemsPerPage = 4;
+      const itemsPerPage = 8;
       showLoading();
       const data = await Api.getAllProduct({ search: '', limit: itemsPerPage, page: currentPage });
       hideLoading()

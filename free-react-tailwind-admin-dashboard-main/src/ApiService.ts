@@ -1,5 +1,41 @@
 import apiClient from "./axios"
 
+// api order
+
+export const getAllOrders = async (currentPage: any, limit: any) => {
+    try {
+        const res = await apiClient.get(`/order/get-all-orders/?page=${currentPage}&limit=${limit}`);
+        console.log('data all order', res.data);
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching orders', error);
+        throw error;
+    }
+}
+
+// api user
+export const getAllUser = async (currentPage: any, limit: any) => {
+    try {
+        const res = await apiClient.get(`/user/get-all-users/?page=${currentPage}&limit=${limit}`);
+        console.log('data all user', res.data);
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching users', error);
+        throw error;
+    }
+};
+
+export const deleteUser = async (userId: number) => {
+    try {
+        const res = await apiClient.delete(`/user/delete-user/${userId}`);
+        console.log('User deleted successfully');
+        return res.data;
+    } catch (error) {
+        console.error('Error deleting user', error);
+        throw error;
+    }
+}
+
 // apt product
 export const getAllProduct = async ({ search = '', limit = 8, page = 1 }) => {
     try {
@@ -169,3 +205,8 @@ export const addNewCategory = async (categoryData: any) => {
     const response = await apiClient.post('/category/create', categoryData);
     return response.data; // Trả về dữ liệu danh mục mới hoặc một phản hồi phù hợp
 };
+
+export const updateCategory = async (categoryName: string, categoryData: any) => {
+    const response = await apiClient.put(`/category/update/${categoryName}`, categoryData);
+    return response.data; // Trả về dữ liệu danh mục mới hoặc một phản hồi phù hợp
+}
