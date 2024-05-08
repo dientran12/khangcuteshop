@@ -53,8 +53,6 @@ const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ onAdd, onClose }) => 
         }
     };
 
-
-
     return (
         <div className="fixed inset-0 z-1 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center ">
             <div className=" mt-[5vh] min-w-100 sm:min-w-132.5 rounded-md border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">

@@ -1,7 +1,8 @@
 import { FaEye, FaAngleRight, FaAngleLeft, FaTrash } from "react-icons/fa";
-import { MdEditSquare } from "react-icons/md";
 import { formatCurrencyVND, formatDateTime, getStatusColor, handleImageOnError, handleImageOnLoad } from "../../utils";
 import { Order } from "../../types/order";
+import { useState } from "react";
+import OrderModal from "../Modal/OrderModal";
 
 interface TableOrderProps {
     orderData: Order[];
@@ -9,10 +10,12 @@ interface TableOrderProps {
     totalPages: number;
     currentPage: number;
     setCurrentPage: (page: number) => void;
+    fetchData: () => void;
 }
 
-const TableOrder: React.FC<TableOrderProps> = ({ orderData, totalPages, currentPage, titleName, setCurrentPage }) => {
-
+const TableOrder: React.FC<TableOrderProps> = ({ fetchData, orderData, totalPages, currentPage, titleName, setCurrentPage }) => {
+    const [selectedOrder, setSelectedOrder] = useState({} as Order);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
     };
@@ -37,8 +40,31 @@ const TableOrder: React.FC<TableOrderProps> = ({ orderData, totalPages, currentP
         </div>
     );
 
+    const handleRowClick = (order: Order) => {
+        setSelectedOrder(order);
+        setIsModalOpen(true);
+    };
+
+    console.log("selectedOrder", selectedOrder)
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleOnchange = () => {
+        fetchData()
+        setIsModalOpen(false)
+    }
+
     return (
         <div className="rounded-md border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+            {isModalOpen && (
+                <OrderModal
+                    order={selectedOrder}
+                    onEdit={handleOnchange}
+                    onClose={handleCloseModal}
+                />
+            )}
             <div className="py-6 px-4 md:px-6 xl:px-7.5">
                 <h4 className="text-xl font-semibold text-black dark:text-white">
                     {titleName}
@@ -68,7 +94,8 @@ const TableOrder: React.FC<TableOrderProps> = ({ orderData, totalPages, currentP
 
             {orderData.map((order, key) => (
                 <div
-                    className={`grid grid-cols-12 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-12 md:px-6 2xl:px-7.5 ${key % 2 === 0 ? "bg-slate-200 dark:bg-slate-600" : "bg-white dark:bg-boxdark"}`}
+                    onClick={() => handleRowClick(order)}
+                    className={`grid grid-cols-12 border-t border-stroke py-4.5 px-4 hover:bg-slate-300 cursor-pointer duration-150  dark:border-strokedark sm:grid-cols-12 md:px-6 2xl:px-7.5 ${key % 2 === 0 ? "bg-slate-200 dark:bg-slate-600" : "bg-white dark:bg-boxdark"}`}
                     key={key}
                 >
                     <div className="col-span-1 flex items-center">

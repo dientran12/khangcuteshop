@@ -40,6 +40,7 @@ const OrderManagement: React.FC = () => {
             <div className="col-span-12 xl:col-span-8">
                 {responseData && (
                     <TableOrder
+                        fetchData={fetchOrders}
                         titleName="All Users"
                         orderData={responseData.orders}
                         totalPages={responseData.totalPage}

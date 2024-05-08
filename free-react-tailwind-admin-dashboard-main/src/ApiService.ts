@@ -13,6 +13,28 @@ export const getAllOrders = async (currentPage: any, limit: any) => {
     }
 }
 
+export const updateOrderStatus = async (oderId: number, status: string) => {
+    try {
+        const res = await apiClient.put(`/order/update-status/${oderId}`, { status });
+        console.log('Order status updated successfully');
+        return res.data;
+    } catch (error) {
+        console.error('Error updating order status', error);
+        throw error;
+    }
+
+}
+
+export const getTotalRevenue = async () => {
+    try {
+        const res = await apiClient.get('/order/get-total-revenue');
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching total orders', error);
+        throw error;
+    }
+}
+
 // api user
 export const getAllUser = async (currentPage: any, limit: any) => {
     try {
@@ -32,6 +54,16 @@ export const deleteUser = async (userId: number) => {
         return res.data;
     } catch (error) {
         console.error('Error deleting user', error);
+        throw error;
+    }
+}
+
+export const getTotalUsers = async () => {
+    try {
+        const res = await apiClient.get('/user/get-total-users');
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching total users', error);
         throw error;
     }
 }
@@ -81,6 +113,16 @@ export const deleteProduct = async (productId: number) => {
         throw error;
     }
 };
+
+export const getTotalProductStock = async () => {
+    try {
+        const res = await apiClient.get('/product/get-total-stock');
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching total product stock', error);
+        throw error;
+    }
+}
 
 // Api Product Version
 

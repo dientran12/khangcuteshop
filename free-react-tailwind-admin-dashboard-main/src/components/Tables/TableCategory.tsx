@@ -52,7 +52,7 @@ const TableCategory: React.FC<TableCategoryProps> = ({ productData, totalPages, 
         </h4>
       </div>
 
-      <div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+      <div className="grid grid-cols-5 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-7 md:px-6 2xl:px-7.5">
         <div className="col-span-3 flex items-center">
           <p className="font-medium">Product Name</p>
         </div>
@@ -68,14 +68,11 @@ const TableCategory: React.FC<TableCategoryProps> = ({ productData, totalPages, 
         <div className="col-span-1 flex items-center">
           <p className="font-medium">Stock</p>
         </div>
-        <div className="col-span-1 flex items-center">
-          <p className="font-medium">Action</p>
-        </div>
       </div>
 
       {productData.map((product, key) => (
         <div
-          className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5"
+          className="grid grid-cols-5 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-7 md:px-6 2xl:px-7.5"
           key={key}
         >
           <div className="col-span-3 flex items-center">
@@ -110,7 +107,7 @@ const TableCategory: React.FC<TableCategoryProps> = ({ productData, totalPages, 
           <div className="col-span-1 flex items-center">
             <p className="text-sm">{product.stock}</p>
           </div>
-          <div className="col-span-1 flex items-center space-x-3.5">
+          {/* <div className="col-span-1 flex items-center space-x-3.5">
             <button
               className="hover:text-primary cursor-pointer p-2"
             >
@@ -126,7 +123,7 @@ const TableCategory: React.FC<TableCategoryProps> = ({ productData, totalPages, 
             >
               <FaTrash />
             </button>
-          </div>
+          </div> */}
         </div>
       ))}
       <div className="py-4 px-4 md:px-6 xl:px-7.5 flex justify-end">

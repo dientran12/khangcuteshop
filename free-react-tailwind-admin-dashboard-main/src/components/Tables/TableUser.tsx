@@ -111,15 +111,11 @@ const TableUser: React.FC<TableUserProps> = ({ userData, totalPages, currentPage
 
                     <div className="col-span-1 sm:col-span-2 flex items-center space-x-3.5">
                         <button
-                            className="hover:text-primary cursor-pointer p-2"
-                        >
-                            <FaEye />
-                        </button>
-                        <button
-                            className="hover:text-red-600 cursor-pointer p-2"
+                            className=" bg-red-500 px-4 hover:font-bold hover:ring-2 hover:ring-offset-2 duration-150 rounded-md text-white cursor-pointer p-2"
                             onClick={() => onDeletedUser(user)}
                         >
-                            <FaTrash />
+                            Delete
+                            {/* <FaTrash className="" /> */}
                         </button>
                     </div>
                 </div>

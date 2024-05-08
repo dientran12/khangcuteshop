@@ -7,6 +7,7 @@ export interface OrderItem {
     price: number;
     image: string;
     style: string;
+    size: string;
     productName: string;
 }
 
